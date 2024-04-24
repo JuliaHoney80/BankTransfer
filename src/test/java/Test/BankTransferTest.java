@@ -4,6 +4,7 @@ import Data.DataHelper;
 import Page.DashboardPage;
 import Page.LoginPage;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,11 +25,11 @@ public class BankTransferTest {
 
     @BeforeEach
         void setup() {
-        var loginPage = open("http://localhost:9999", LoginPage.class);
+        var loginPage = Selenide.open("http://localhost:9999", LoginPage.class);
         var authInfo = getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = getVerificationCode();
-        dashboardPage = verificationPage;
+        dashboardPage = verificationPage.validVerify(verificationCode);
         firstCardInfo = getFirstCardInfo();
         secondCardInfo = getSecondCardInfo();
         firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);

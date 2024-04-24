@@ -1,7 +1,9 @@
 package Page;
 
+import Data.DataHelper;
 import com.codeborne.selenide.SelenideElement;
 
+import static Data.DataHelper.getVerificationCode;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -9,14 +11,14 @@ import static com.codeborne.selenide.Selenide.$;
 public class VerificationPage {
     private final SelenideElement codeField = $("[data-test-id=code] input");
     private final SelenideElement verifyButton = $("[data-test-id=action-verify]");
-    private SelenideElement errorPopup = $(".notification__content");
+    private final SelenideElement errorPopup = $(".notification__content");
 
     public VerificationPage() {
         codeField.shouldBe(visible);
     }
 
-    public DashboardPage validVerify(String verificationCode) {
-        codeField.setValue(verificationCode);
+    public DashboardPage validVerify(DataHelper.VerificationCode verificationCode) {
+        codeField.setValue(verificationCode.getСode());
         verifyButton.click();
         return new DashboardPage();
     }
