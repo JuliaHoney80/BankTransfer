@@ -1,18 +1,13 @@
-package Test;
+package test;
 
-import Data.DataHelper;
-import Page.DashboardPage;
-import Page.LoginPage;
-import com.codeborne.selenide.Configuration;
+import data.DataHelper;
+import page.DashboardPage;
+import page.LoginPage;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static Data.DataHelper.*;
+import static data.DataHelper.*;
 import static java.nio.channels.FileChannel.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

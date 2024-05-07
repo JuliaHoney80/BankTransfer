@@ -1,8 +1,7 @@
-package Page;
+package page;
 
-import Data.DataHelper;
+import data.DataHelper;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
