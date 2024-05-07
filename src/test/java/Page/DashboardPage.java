@@ -26,10 +26,10 @@ public class DashboardPage {
     }
 
 
-    public int getCardBalance(int index) {
-        var text = cards.get(index).getText();
-        return extractBalance(text);
-    }
+    //public int getCardBalance(int index) {
+        //var text = cards.get(index).getText();
+        //return extractBalance(text);
+    //}
 
 
     public TransferPage selectCardToTransfer(DataHelper.CardInfo cardInfo) {
