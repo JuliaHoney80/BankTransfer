@@ -20,7 +20,7 @@ public class BankTransferTest {
 
     @BeforeEach
         void setup() {
-        var loginPage = Selenide.open("http://localho2st:9999", LoginPage.class);
+        var loginPage = Selenide.open("http://localhost:9999", LoginPage.class);
         var authInfo = getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = getVerificationCode();
