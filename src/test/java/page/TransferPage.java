@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -15,7 +16,7 @@ public class TransferPage {
     private final SelenideElement amountInput = $("[data-test-id='amount'] input");
     private final SelenideElement fromInput = $("[data-test-id='from'] input");
     private final SelenideElement transferHead = $(byText("Пополнение карты"));
-    private final SelenideElement errorMessage = $("[data-yest-id='error-notification'] .notification__content");
+    private final SelenideElement errorMessage = $("[data-test-id='error-notification'] .notification__content");
 
     public TransferPage() {
         transferHead.shouldBe(visible);
